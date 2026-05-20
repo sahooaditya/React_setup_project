@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./company.css";
 import Breadcrumb from "../../../components/common/Breadcrumb/Breadcrumb";
 
