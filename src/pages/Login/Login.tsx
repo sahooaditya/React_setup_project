@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Container from "../../components/common/Container";
 import "./login.css";
 import Space from "../../components/common/space";
+import { FaArrowLeft } from "react-icons/fa";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -41,6 +42,11 @@ const Login = () => {
     <Container>
       <Space size="lg" mobileSize="sm" />
       <div className="login-page">
+        {/* BACK BUTTON */}
+        <div className="back-button" onClick={() => navigate("/")}>
+          <FaArrowLeft size={18} />
+          <span>Back To Home</span>
+        </div>
         <div className="login-container">
           {/* Left Side */}
           <div className="login-left">

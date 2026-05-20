@@ -24,6 +24,86 @@ body {
 /* =========================
    CONTAINER
 ========================= */
+/* =========================
+   BACK BUTTON
+========================= */
+.back-button {
+  position: absolute;
+
+  top: 30px;
+  left: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+
+  z-index: 20;
+}
+
+.back-button span {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #111827;
+}
+
+.back-button:hover {
+  transform: translateY(-3px);
+
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+
+  color: white;
+}
+
+.back-button:hover span {
+  color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .back-button {
+    top: 20px;
+    left: 20px;
+
+    padding: 10px 16px;
+  }
+
+  .back-button span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    top: 16px;
+    left: 16px;
+
+    padding: 9px 14px;
+  }
+
+  .back-button span {
+    display: none;
+  }
+}
 .login-container {
   width: 100%;
   max-width: 1100px;
