@@ -1,0 +1,94 @@
+/* =========================
+   ROOT VARIABLES (BREAKPOINTS)
+========================= */
+:root {
+  --container-sm: 576px;
+  --container-md: 768px;
+  --container-lg: 992px;
+  --container-xl: 1200px;
+  --container-xxl: 1320px;
+
+  /* optional colors (recommended) */
+  --bg: #f5f5f5;
+  --text: #111;
+}
+/* 🌙 DARK MODE */
+[data-theme="dark"] {
+  --bg: #ede1e1;
+  --text: #983333;
+  --nav-bg: #222;
+}
+/* =========================
+   RESET
+========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE HTML / BODY
+========================= */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* =========================
+   MEDIA ELEMENTS
+========================= */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   GLOBAL CONTAINER SYSTEM
+========================= */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 15px; /* 🔥 important for mobile spacing */
+}
+
+/* =========================
+   RESPONSIVE CONTAINER
+========================= */
+@media (max-width: 1200px) {
+  .container {
+    max-width: var(--container-xl);
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: var(--container-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: var(--container-md);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}

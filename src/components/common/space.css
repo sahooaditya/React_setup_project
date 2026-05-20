@@ -1,0 +1,30 @@
+.space {
+  width: 100%;
+}
+
+/* Desktop */
+.space.sm {
+  margin-top: 1rem;
+}
+.space.md {
+  margin-top: 2rem;
+}
+.space.lg {
+  margin-top: 4rem;
+}
+.space.xl {
+  margin-top: 6rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .space.mobile-sm {
+    margin-top: 8px;
+  }
+  .space.mobile-md {
+    margin-top: 16px;
+  }
+  .space.mobile-lg {
+    margin-top: 24px;
+  }
+}

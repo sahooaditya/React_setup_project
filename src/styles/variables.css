@@ -1,0 +1,31 @@
+:root {
+  /* 🌈 PRIMARY COLORS */
+  --primary: #1aa546;
+  --primary-dark: #1d4ed8;
+  --primary-light: #60a5fa;
+
+  /* 🎯 SECONDARY */
+  --secondary: #10b981;
+  --secondary-dark: #059669;
+
+  /* ⚫ NEUTRAL */
+  --black: #111827;
+  --dark: #1f2937;
+  --gray: #6b7280;
+  --light-gray: #e5e7eb;
+  --white: #ffffff;
+
+  /* 🔴 STATUS COLORS */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  /* 🌙 BACKGROUND */
+  --bg: #d5c7b9;
+  --card-bg: #ffffff;
+
+  /* ✍ TEXT */
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+}
