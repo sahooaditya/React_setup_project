@@ -12,6 +12,7 @@ import GoToTop from "./components/common/GoToTop";
 import ScrollTopButton from "./components/common/ScrollTopButton";
 import CookieConsent from "./components/common/CookieConsent";
 import Loader from "./components/common/Loader";
+import FloatingLoginPrompt from "./components/common/FloatingLoginPrompt";
 
 function App() {
   const mode = useAppSelector((state) => state.theme.mode);
@@ -53,6 +54,9 @@ function App() {
 
         {/* FLOATING BUTTON */}
         <ScrollTopButton />
+
+        {/* LOGIN PROMPT */}
+        <FloatingLoginPrompt />
 
         {/* COOKIE */}
         <CookieConsent />
