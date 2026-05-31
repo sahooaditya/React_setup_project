@@ -151,14 +151,14 @@
   overflow: hidden;
 }
 
-.dashboard-topbar {
+.dashboard-topbars {
   display: flex;
   gap: 8px;
   padding: 18px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-.dashboard-topbar span {
+.dashboard-topbars span {
   width: 10px;
   height: 10px;
   border-radius: 50%;

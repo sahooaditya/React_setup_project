@@ -63,7 +63,7 @@ const Home = () => {
             rotateX: 10,
             duration: 0.95,
           },
-          "-=0.55"
+          "-=0.55",
         )
         .from(
           ".orbit-pill",
@@ -73,7 +73,7 @@ const Home = () => {
             duration: 0.7,
             stagger: 0.08,
           },
-          "-=0.45"
+          "-=0.45",
         );
 
       gsap.to(".parallax-shape.one", {
@@ -162,7 +162,7 @@ const Home = () => {
 
             <div className="hero-visual" aria-label="Dashboard preview">
               <div className="dashboard-shell">
-                <div className="dashboard-topbar">
+                <div className="dashboard-topbars">
                   <span />
                   <span />
                   <span />
@@ -186,9 +186,15 @@ const Home = () => {
                   </div>
 
                   <div className="task-panel">
-                    <p><FiCheckCircle /> Authentication ready</p>
-                    <p><FiCheckCircle /> Redux toolkit wired</p>
-                    <p><FiCheckCircle /> Responsive UI system</p>
+                    <p>
+                      <FiCheckCircle /> Authentication ready
+                    </p>
+                    <p>
+                      <FiCheckCircle /> Redux toolkit wired
+                    </p>
+                    <p>
+                      <FiCheckCircle /> Responsive UI system
+                    </p>
                   </div>
                 </div>
               </div>
@@ -272,7 +278,9 @@ const Home = () => {
           <div className="cta-inner">
             <span>Ready to launch</span>
             <h2>Give your React project a premium first screen.</h2>
-            <p>Start from the login flow or explore the service pages with a stronger visual story.</p>
+            <p>
+              Start from the login flow or explore the service pages with a stronger visual story.
+            </p>
             <Link to="/login" className="cta-btn">
               Login Now <FiArrowRight />
             </Link>
