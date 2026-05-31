@@ -16,7 +16,7 @@ const Header = () => {
   const mode = useAppSelector((state) => state.theme.mode);
   const { user, isAuthenticated } = useAppSelector((state) => state.auth);
   const cartCount = useAppSelector((state) =>
-    state.cart.items.reduce((total, item) => total + item.quantity, 0)
+    state.cart.items.reduce((total, item) => total + item.quantity, 0),
   );
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -136,7 +136,11 @@ const Header = () => {
             <span className="cart-count">{cartCount}</span>
           </Link>
         )}
-        <button className="theme-toggle" onClick={() => dispatch(toggleTheme())} aria-label="Toggle theme">
+        <button
+          className="theme-toggle"
+          onClick={() => dispatch(toggleTheme())}
+          aria-label="Toggle theme"
+        >
           {mode === "light" ? <FiMoon /> : <FiSun />}
         </button>
         <button

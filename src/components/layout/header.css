@@ -226,7 +226,7 @@ body {
 
   .nav {
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100%);
     left: 14px;
     right: 14px;
 
@@ -246,6 +246,7 @@ body {
 
   .nav.open {
     display: flex;
+    min-width: 100%;
   }
 
   .nav a,
@@ -283,7 +284,7 @@ body {
 
 @media (max-width: 520px) {
   body {
-    padding-top: 68px;
+    padding-top: 58px;
   }
 
   .header {
