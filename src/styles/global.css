@@ -38,6 +38,10 @@ body {
   overflow-x: hidden; /* prevent horizontal scroll */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--bg);
@@ -90,5 +94,11 @@ video {
   .container {
     max-width: 100%;
     padding: 0 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

@@ -22,10 +22,269 @@
   --info: #3b82f6;
 
   /* 🌙 BACKGROUND */
-  --bg: #d5c7b9;
+  --bg: #f8fafc;
+  --page-bg: #f8fafc;
+  --section-bg: #ffffff;
   --card-bg: #ffffff;
+  --surface-bg: #ffffff;
+  --surface-soft: #f1f5f9;
+  --hero-bg: #111827;
+  --border: #e2e8f0;
 
   /* ✍ TEXT */
+  --text: #111827;
   --text-primary: #111827;
-  --text-secondary: #6b7280;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --page-bg: #0f172a;
+  --section-bg: #111827;
+  --card-bg: #1e293b;
+  --surface-bg: #1e293b;
+  --surface-soft: #334155;
+  --hero-bg: #020617;
+  --border: #334155;
+
+  --text: #f8fafc;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #ffffff;
+  --text-inverse: #ffffff;
+}
+
+body,
+.app,
+.page-wrapper {
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+.service-page,
+.product-page,
+.catalog-page,
+.details-page,
+.cart-page,
+.buy-page,
+.team-page,
+.company-page,
+.users-page {
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+.services-section,
+.product-section,
+.about-company,
+.company-features,
+.team-section,
+.cart-layout,
+.buy-layout,
+.catalog-layout {
+  background: var(--page-bg);
+}
+
+.service-card,
+.product-card,
+.catalog-card,
+.filter-sidebar,
+.details-image,
+.details-meta span,
+.cart-item,
+.cart-summary,
+.cart-empty,
+.buy-item,
+.buy-summary,
+.buy-empty,
+.company-card,
+.feature-card,
+.team-card {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+.catalog-hero,
+.cart-header,
+.buy-header {
+  background: var(--hero-bg);
+}
+
+.section-title h2,
+.service-card h3,
+.why-left h2,
+.product-card h2,
+.catalog-card h2,
+.catalog-card strong,
+.filter-title h2,
+.details-info,
+.details-info h1,
+.details-info strong,
+.details-meta span,
+.cart-item h2,
+.cart-item strong,
+.cart-summary h2,
+.cart-summary strong,
+.cart-empty h2,
+.buy-item h2,
+.buy-item strong,
+.buy-summary h2,
+.buy-summary strong,
+.buy-empty h2 {
+  color: var(--text-primary);
+}
+
+.service-card p,
+.why-left p,
+.product-card p,
+.catalog-card p,
+.filter-sidebar label,
+.details-desc,
+.cart-item p,
+.cart-summary p,
+.buy-item p,
+.buy-summary div {
+  color: var(--text-secondary);
+}
+
+.filter-title button,
+.filter-sidebar input,
+.filter-sidebar select,
+.details-quantity,
+.cart-quantity {
+  background: var(--surface-bg);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+.filter-title button {
+  background: var(--surface-soft);
+}
+
+.details-quantity span,
+.cart-quantity span {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] .app,
+[data-theme="dark"] .page-wrapper,
+[data-theme="dark"] .service-page,
+[data-theme="dark"] .product-page,
+[data-theme="dark"] .catalog-page,
+[data-theme="dark"] .details-page,
+[data-theme="dark"] .cart-page,
+[data-theme="dark"] .buy-page,
+[data-theme="dark"] .team-page,
+[data-theme="dark"] .company-page,
+[data-theme="dark"] .users-page,
+[data-theme="dark"] .home-page,
+[data-theme="dark"] .login-page {
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .services-section,
+[data-theme="dark"] .product-section,
+[data-theme="dark"] .about-company,
+[data-theme="dark"] .company-features,
+[data-theme="dark"] .team-section,
+[data-theme="dark"] .cart-layout,
+[data-theme="dark"] .buy-layout,
+[data-theme="dark"] .catalog-layout,
+[data-theme="dark"] .why-us {
+  background: var(--page-bg);
+}
+
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .catalog-card,
+[data-theme="dark"] .filter-sidebar,
+[data-theme="dark"] .details-image,
+[data-theme="dark"] .details-meta span,
+[data-theme="dark"] .cart-item,
+[data-theme="dark"] .cart-summary,
+[data-theme="dark"] .cart-empty,
+[data-theme="dark"] .buy-item,
+[data-theme="dark"] .buy-summary,
+[data-theme="dark"] .buy-empty,
+[data-theme="dark"] .company-card,
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .team-card,
+[data-theme="dark"] .login-card {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .catalog-hero,
+[data-theme="dark"] .cart-header,
+[data-theme="dark"] .buy-header {
+  background: var(--hero-bg);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] .section-title h2,
+[data-theme="dark"] .service-card h3,
+[data-theme="dark"] .why-left h2,
+[data-theme="dark"] .product-card h2,
+[data-theme="dark"] .catalog-card h2,
+[data-theme="dark"] .catalog-card strong,
+[data-theme="dark"] .filter-title h2,
+[data-theme="dark"] .details-info,
+[data-theme="dark"] .details-info h1,
+[data-theme="dark"] .details-info strong,
+[data-theme="dark"] .details-meta span,
+[data-theme="dark"] .cart-item h2,
+[data-theme="dark"] .cart-item strong,
+[data-theme="dark"] .cart-summary h2,
+[data-theme="dark"] .cart-summary strong,
+[data-theme="dark"] .cart-empty h2,
+[data-theme="dark"] .buy-item h2,
+[data-theme="dark"] .buy-item strong,
+[data-theme="dark"] .buy-summary h2,
+[data-theme="dark"] .buy-summary strong,
+[data-theme="dark"] .buy-empty h2 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .service-card p,
+[data-theme="dark"] .why-left p,
+[data-theme="dark"] .product-card p,
+[data-theme="dark"] .catalog-card p,
+[data-theme="dark"] .filter-sidebar label,
+[data-theme="dark"] .details-desc,
+[data-theme="dark"] .cart-item p,
+[data-theme="dark"] .cart-summary p,
+[data-theme="dark"] .buy-item p,
+[data-theme="dark"] .buy-summary div {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .filter-title button,
+[data-theme="dark"] .filter-sidebar input,
+[data-theme="dark"] .filter-sidebar select,
+[data-theme="dark"] .details-quantity,
+[data-theme="dark"] .cart-quantity {
+  background: var(--surface-bg);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .filter-title button {
+  background: var(--surface-soft);
+}
+
+[data-theme="dark"] .details-quantity span,
+[data-theme="dark"] .cart-quantity span {
+  color: var(--text-primary);
 }

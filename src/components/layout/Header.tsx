@@ -1,63 +1,72 @@
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import { FiMenu, FiMoon, FiShoppingCart, FiSun, FiUser, FiX } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
-import { headerRoutes } from "./HeaderRoutes";
-import "./header.css";
-import { toggleTheme } from "../../features/theme/themeSlice";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { logout } from "../../features/auth/authSlice";
+import { toggleTheme } from "../../features/theme/themeSlice";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import "./header.css";
+import { headerRoutes } from "./HeaderRoutes";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const mode = useAppSelector((state) => state.theme.mode);
+  const { user, isAuthenticated } = useAppSelector((state) => state.auth);
+  const cartCount = useAppSelector((state) =>
+    state.cart.items.reduce((total, item) => total + item.quantity, 0)
+  );
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const timeoutRef = useRef<any>(null);
-  const { user, isAuthenticated } = useAppSelector((state) => state.auth);
+  const visibleRoutes = headerRoutes.filter((route) => !route.requiresAuth || isAuthenticated);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setActiveSubmenu(null);
+  };
+
   const handleMouseEnter = (label: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setActiveSubmenu(label);
   };
-  const isMobile = window.innerWidth <= 768;
+
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveSubmenu(null);
     }, 200);
   };
-  const [scrolled, setScrolled] = useState(false);
 
-  /* SCROLL EFFECT */
+  const goToDashboard = () => {
+    navigate(user?.role === "admin" ? "/dashboard/admin" : "/dashboard/user");
+    closeMenu();
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <Link to="/" className="logo">
-        AKS
+      <Link to="/" className="logo" onClick={closeMenu}>
+        <span className="logo-mark">MC</span>
+        <span>MyCompany</span>
       </Link>
 
-      {/* Hamburger */}
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? "✖" : "☰"}
-      </div>
       <nav className={`nav ${menuOpen ? "open" : ""}`}>
-        {headerRoutes.map((route) => (
+        {visibleRoutes.map((route) => (
           <div
             key={route.label}
             className="nav-item"
             onMouseEnter={() => route.submenu && handleMouseEnter(route.label)}
             onMouseLeave={handleMouseLeave}
           >
-            {/* ✅ yahi implement karna hai */}
             {route.submenu ? (
               <span
                 className="menu-label"
@@ -66,12 +75,11 @@ const Header = () => {
                 {route.label}
               </span>
             ) : (
-              <Link to={route.path} onClick={() => setMenuOpen(false)}>
+              <Link to={route.path} onClick={closeMenu}>
                 {route.label}
               </Link>
             )}
 
-            {/* Submenu */}
             {route.submenu && activeSubmenu === route.label && (
               <div
                 className="submenu"
@@ -79,14 +87,7 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 {route.submenu.map((sub) => (
-                  <Link
-                    key={sub.label}
-                    to={sub.path}
-                    onClick={() => {
-                      setActiveSubmenu(null); // close dropdown
-                      setMenuOpen(false); // ✅ close mobile menu
-                    }}
-                  >
+                  <Link key={sub.label} to={sub.path} onClick={closeMenu}>
                     {sub.label}
                   </Link>
                 ))}
@@ -94,72 +95,59 @@ const Header = () => {
             )}
           </div>
         ))}
+
         {isAuthenticated ? (
-          isMobile ? (
-            // ✅ MOBILE VIEW (direct show)
-            <div className="user-section">
-              <span>👤 {user?.username}</span>
-              <button
-                onClick={() => {
-                  if (user?.role === "admin") {
-                    navigate("/dashboard/admin");
-                  } else {
-                    navigate("/dashboard/user");
-                  }
-                  setMenuOpen(false);
-                }}
-              >
-                Dashboard
-              </button>
+          <div
+            className="nav-item user-nav"
+            onMouseEnter={() => handleMouseEnter("user")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <span
+              className="menu-label user-label"
+              onClick={() => setActiveSubmenu(activeSubmenu === "user" ? null : "user")}
+            >
+              <FiUser />
+              {user?.username}
+            </span>
+
+            <div className={`submenu user-submenu ${activeSubmenu === "user" ? "show" : ""}`}>
+              <button onClick={goToDashboard}>Dashboard</button>
               <button
                 onClick={() => {
                   dispatch(logout());
-                  setMenuOpen(false);
+                  closeMenu();
                 }}
               >
                 Logout
               </button>
             </div>
-          ) : (
-            // ✅ DESKTOP (dropdown)
-            <div
-              className="nav-item"
-              onMouseEnter={() => handleMouseEnter("user")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <span
-                className="menu-label"
-                onClick={() => setActiveSubmenu(activeSubmenu === "user" ? null : "user")}
-              >
-                👤 {user?.username}
-              </span>
-
-              {activeSubmenu === "user" && (
-                <div className="submenu">
-                  <button
-                    onClick={() => {
-                      if (user?.role === "admin") {
-                        navigate("/dashboard/admin");
-                      } else {
-                        navigate("/dashboard/user");
-                      }
-                      setMenuOpen(false);
-                    }}
-                  >
-                    Dashboard
-                  </button>
-                  <button onClick={() => dispatch(logout())}>Logout</button>
-                </div>
-              )}
-            </div>
-          )
+          </div>
         ) : (
-          <Link to="/login" onClick={() => setMenuOpen(false)}>
+          <Link to="/login" onClick={closeMenu}>
             Login
           </Link>
         )}
       </nav>
-      <button onClick={() => dispatch(toggleTheme())}>{mode === "light" ? "🌙" : "☀️"}</button>
+
+      <div className="header-actions">
+        {isAuthenticated && (
+          <Link to="/cart" className="cart-link" onClick={closeMenu} aria-label="Cart">
+            <FiShoppingCart />
+            <span className="cart-count">{cartCount}</span>
+          </Link>
+        )}
+        <button className="theme-toggle" onClick={() => dispatch(toggleTheme())} aria-label="Toggle theme">
+          {mode === "light" ? <FiMoon /> : <FiSun />}
+        </button>
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? <FiX /> : <FiMenu />}
+        </button>
+      </div>
     </header>
   );
 };

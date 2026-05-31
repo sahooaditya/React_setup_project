@@ -26,6 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "payment-server": "node server/razorpay-server.js",
     "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

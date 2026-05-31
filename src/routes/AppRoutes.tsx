@@ -3,7 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "../components/layout/MainLayout";
 import DashboardLayout from "../components/layout/DashboardLayout";
 import ProtectedRoute from "./ProtectedRoute";
+import BuyNow from "../pages/BuyNow";
+import Cart from "../pages/Cart";
 import Service from "../pages/Service";
+import Product from "../pages/Product";
+import ProductDetails from "../pages/Product/ProductDetails";
+import ProductList from "../pages/Product/ProductList";
 
 /* LAZY PAGES */
 
@@ -75,6 +80,72 @@ const AppRoutes = () => {
           <MainLayout>
             <Service />
           </MainLayout>
+        }
+      />
+
+      <Route
+        path="/product"
+        element={
+          <ProtectedRoute>
+            <MainLayout>
+              <Product />
+            </MainLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/product/:categoryId"
+        element={
+          <ProtectedRoute>
+            <MainLayout>
+              <ProductList />
+            </MainLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/product/details/:productId"
+        element={
+          <ProtectedRoute>
+            <MainLayout>
+              <ProductDetails />
+            </MainLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/cart"
+        element={
+          <ProtectedRoute>
+            <MainLayout>
+              <Cart />
+            </MainLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/buy-now"
+        element={
+          <ProtectedRoute>
+            <MainLayout>
+              <BuyNow />
+            </MainLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/buy-now/:productId"
+        element={
+          <ProtectedRoute>
+            <MainLayout>
+              <BuyNow />
+            </MainLayout>
+          </ProtectedRoute>
         }
       />
 

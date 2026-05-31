@@ -1,0 +1,626 @@
+{
+  "categoryCards": [
+    {
+      "id": "watch",
+      "title": "Watch",
+      "desc": "Premium smart, classic, and sports watches for daily style.",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "tshirt",
+      "title": "T-shirt",
+      "desc": "Comfortable cotton and performance T-shirts for every season.",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "woman-dress",
+      "title": "Woman Dress",
+      "desc": "Elegant casual, party, and ethnic dresses for modern wardrobes.",
+      "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=1200&auto=format&fit=crop"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "categoryId": "watch",
+      "name": "Astra Chrono Watch",
+      "brand": "Astra",
+      "color": "Black",
+      "rating": 4.8,
+      "price": 2499,
+      "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 2,
+      "categoryId": "watch",
+      "name": "Nova Steel Watch",
+      "brand": "Nova",
+      "color": "Silver",
+      "rating": 4.5,
+      "price": 1899,
+      "image": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 3,
+      "categoryId": "watch",
+      "name": "Pulse Smart Watch",
+      "brand": "Pulse",
+      "color": "Blue",
+      "rating": 4.3,
+      "price": 3299,
+      "image": "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 4,
+      "categoryId": "watch",
+      "name": "Orbit Sport Watch",
+      "brand": "Orbit",
+      "color": "Black",
+      "rating": 4.6,
+      "price": 2799,
+      "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 5,
+      "categoryId": "watch",
+      "name": "Astra Leather Watch",
+      "brand": "Astra",
+      "color": "Brown",
+      "rating": 4.4,
+      "price": 2199,
+      "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 6,
+      "categoryId": "watch",
+      "name": "Nova Classic Watch",
+      "brand": "Nova",
+      "color": "Gold",
+      "rating": 4.7,
+      "price": 3499,
+      "image": "https://images.unsplash.com/photo-1526045431048-f857369baa09?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 7,
+      "categoryId": "watch",
+      "name": "Pulse Fit Watch",
+      "brand": "Pulse",
+      "color": "Green",
+      "rating": 4.1,
+      "price": 1599,
+      "image": "https://images.unsplash.com/photo-1557438159-51eec7a6c9e8?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 8,
+      "categoryId": "watch",
+      "name": "Orbit Minimal Watch",
+      "brand": "Orbit",
+      "color": "White",
+      "rating": 4.2,
+      "price": 1999,
+      "image": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 9,
+      "categoryId": "watch",
+      "name": "Astra Midnight Watch",
+      "brand": "Astra",
+      "color": "Black",
+      "rating": 4.9,
+      "price": 4299,
+      "image": "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 10,
+      "categoryId": "watch",
+      "name": "Nova Rose Watch",
+      "brand": "Nova",
+      "color": "Pink",
+      "rating": 4.0,
+      "price": 1799,
+      "image": "https://images.unsplash.com/photo-1554151447-b9d2197448f9?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 11,
+      "categoryId": "watch",
+      "name": "Pulse Active Watch",
+      "brand": "Pulse",
+      "color": "Red",
+      "rating": 4.3,
+      "price": 2499,
+      "image": "https://images.unsplash.com/photo-1544117519-31a4b719223d?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 12,
+      "categoryId": "watch",
+      "name": "Orbit Ceramic Watch",
+      "brand": "Orbit",
+      "color": "White",
+      "rating": 4.5,
+      "price": 3999,
+      "image": "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 13,
+      "categoryId": "watch",
+      "name": "Astra Urban Watch",
+      "brand": "Astra",
+      "color": "Gray",
+      "rating": 4.2,
+      "price": 2299,
+      "image": "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 14,
+      "categoryId": "watch",
+      "name": "Nova Mesh Watch",
+      "brand": "Nova",
+      "color": "Silver",
+      "rating": 4.6,
+      "price": 2699,
+      "image": "https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 15,
+      "categoryId": "watch",
+      "name": "Pulse Pro Watch",
+      "brand": "Pulse",
+      "color": "Black",
+      "rating": 4.7,
+      "price": 4599,
+      "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 16,
+      "categoryId": "watch",
+      "name": "Orbit Heritage Watch",
+      "brand": "Orbit",
+      "color": "Brown",
+      "rating": 4.1,
+      "price": 2099,
+      "image": "https://images.unsplash.com/photo-1620625515032-6ed0c1790c75?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 17,
+      "categoryId": "watch",
+      "name": "Astra Goldline Watch",
+      "brand": "Astra",
+      "color": "Gold",
+      "rating": 4.8,
+      "price": 5199,
+      "image": "https://images.unsplash.com/photo-1619134778706-7015533a6150?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 18,
+      "categoryId": "watch",
+      "name": "Nova Traveler Watch",
+      "brand": "Nova",
+      "color": "Blue",
+      "rating": 4.4,
+      "price": 2999,
+      "image": "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 19,
+      "categoryId": "watch",
+      "name": "Pulse Lite Watch",
+      "brand": "Pulse",
+      "color": "Pink",
+      "rating": 3.9,
+      "price": 1299,
+      "image": "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 20,
+      "categoryId": "watch",
+      "name": "Orbit Elite Watch",
+      "brand": "Orbit",
+      "color": "Black",
+      "rating": 4.9,
+      "price": 5999,
+      "image": "https://images.unsplash.com/photo-1517463700628-5103184eac47?q=80&w=900&auto=format&fit=crop"
+    },
+
+    {
+      "id": 21,
+      "categoryId": "tshirt",
+      "name": "Urban Cotton T-shirt",
+      "brand": "Urban",
+      "color": "Black",
+      "rating": 4.5,
+      "price": 599,
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 22,
+      "categoryId": "tshirt",
+      "name": "Mode Plain T-shirt",
+      "brand": "Mode",
+      "color": "White",
+      "rating": 4.2,
+      "price": 499,
+      "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 23,
+      "categoryId": "tshirt",
+      "name": "Stride Active T-shirt",
+      "brand": "Stride",
+      "color": "Blue",
+      "rating": 4.6,
+      "price": 799,
+      "image": "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 24,
+      "categoryId": "tshirt",
+      "name": "Core Round Neck T-shirt",
+      "brand": "Core",
+      "color": "Green",
+      "rating": 4.0,
+      "price": 449,
+      "image": "https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 25,
+      "categoryId": "tshirt",
+      "name": "Urban Graphic T-shirt",
+      "brand": "Urban",
+      "color": "Red",
+      "rating": 4.4,
+      "price": 699,
+      "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 26,
+      "categoryId": "tshirt",
+      "name": "Mode Oversized T-shirt",
+      "brand": "Mode",
+      "color": "Gray",
+      "rating": 4.7,
+      "price": 899,
+      "image": "https://images.unsplash.com/photo-1622445275576-721325763afe?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 27,
+      "categoryId": "tshirt",
+      "name": "Stride Dry Fit T-shirt",
+      "brand": "Stride",
+      "color": "Black",
+      "rating": 4.8,
+      "price": 999,
+      "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 28,
+      "categoryId": "tshirt",
+      "name": "Core V Neck T-shirt",
+      "brand": "Core",
+      "color": "White",
+      "rating": 3.9,
+      "price": 399,
+      "image": "https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 29,
+      "categoryId": "tshirt",
+      "name": "Urban Stripe T-shirt",
+      "brand": "Urban",
+      "color": "Blue",
+      "rating": 4.1,
+      "price": 649,
+      "image": "https://images.unsplash.com/photo-1571945153237-4929e783af4a?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 30,
+      "categoryId": "tshirt",
+      "name": "Mode Polo T-shirt",
+      "brand": "Mode",
+      "color": "Green",
+      "rating": 4.3,
+      "price": 1099,
+      "image": "https://images.unsplash.com/photo-1618354691229-88d47f285158?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 31,
+      "categoryId": "tshirt",
+      "name": "Stride Training T-shirt",
+      "brand": "Stride",
+      "color": "Red",
+      "rating": 4.5,
+      "price": 849,
+      "image": "https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 32,
+      "categoryId": "tshirt",
+      "name": "Core Daily T-shirt",
+      "brand": "Core",
+      "color": "Gray",
+      "rating": 4.0,
+      "price": 549,
+      "image": "https://images.unsplash.com/photo-1618517351616-38fb9c5210c6?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 33,
+      "categoryId": "tshirt",
+      "name": "Urban Printed T-shirt",
+      "brand": "Urban",
+      "color": "Yellow",
+      "rating": 4.2,
+      "price": 749,
+      "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 34,
+      "categoryId": "tshirt",
+      "name": "Mode Pocket T-shirt",
+      "brand": "Mode",
+      "color": "Brown",
+      "rating": 3.8,
+      "price": 599,
+      "image": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 35,
+      "categoryId": "tshirt",
+      "name": "Stride Runner T-shirt",
+      "brand": "Stride",
+      "color": "Orange",
+      "rating": 4.6,
+      "price": 949,
+      "image": "https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 36,
+      "categoryId": "tshirt",
+      "name": "Core Solid T-shirt",
+      "brand": "Core",
+      "color": "Black",
+      "rating": 4.4,
+      "price": 499,
+      "image": "https://images.unsplash.com/photo-1618354691438-25bc04584c23?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 37,
+      "categoryId": "tshirt",
+      "name": "Urban Longline T-shirt",
+      "brand": "Urban",
+      "color": "White",
+      "rating": 4.1,
+      "price": 799,
+      "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 38,
+      "categoryId": "tshirt",
+      "name": "Mode Soft Touch T-shirt",
+      "brand": "Mode",
+      "color": "Pink",
+      "rating": 4.7,
+      "price": 899,
+      "image": "https://images.unsplash.com/photo-1564859228273-274232fdb516?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 39,
+      "categoryId": "tshirt",
+      "name": "Stride Gym T-shirt",
+      "brand": "Stride",
+      "color": "Gray",
+      "rating": 4.9,
+      "price": 1199,
+      "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 40,
+      "categoryId": "tshirt",
+      "name": "Core Summer T-shirt",
+      "brand": "Core",
+      "color": "Blue",
+      "rating": 4.0,
+      "price": 449,
+      "image": "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?q=80&w=900&auto=format&fit=crop"
+    },
+
+    {
+      "id": 41,
+      "categoryId": "woman-dress",
+      "name": "Luna Floral Dress",
+      "brand": "Luna",
+      "color": "Pink",
+      "rating": 4.7,
+      "price": 1799,
+      "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 42,
+      "categoryId": "woman-dress",
+      "name": "Belle Evening Dress",
+      "brand": "Belle",
+      "color": "Black",
+      "rating": 4.8,
+      "price": 3499,
+      "image": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 43,
+      "categoryId": "woman-dress",
+      "name": "Mira Cotton Dress",
+      "brand": "Mira",
+      "color": "White",
+      "rating": 4.3,
+      "price": 1299,
+      "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 44,
+      "categoryId": "woman-dress",
+      "name": "Aura Party Dress",
+      "brand": "Aura",
+      "color": "Red",
+      "rating": 4.6,
+      "price": 2599,
+      "image": "https://images.unsplash.com/photo-1550639525-c97d455acf70?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 45,
+      "categoryId": "woman-dress",
+      "name": "Luna Maxi Dress",
+      "brand": "Luna",
+      "color": "Blue",
+      "rating": 4.4,
+      "price": 1999,
+      "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 46,
+      "categoryId": "woman-dress",
+      "name": "Belle Satin Dress",
+      "brand": "Belle",
+      "color": "Green",
+      "rating": 4.5,
+      "price": 2899,
+      "image": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 47,
+      "categoryId": "woman-dress",
+      "name": "Mira Casual Dress",
+      "brand": "Mira",
+      "color": "Yellow",
+      "rating": 4.0,
+      "price": 1099,
+      "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 48,
+      "categoryId": "woman-dress",
+      "name": "Aura Wrap Dress",
+      "brand": "Aura",
+      "color": "Brown",
+      "rating": 4.2,
+      "price": 1599,
+      "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 49,
+      "categoryId": "woman-dress",
+      "name": "Luna Printed Dress",
+      "brand": "Luna",
+      "color": "Orange",
+      "rating": 4.1,
+      "price": 1499,
+      "image": "https://images.unsplash.com/photo-1545291730-faff8ca1d4b0?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 50,
+      "categoryId": "woman-dress",
+      "name": "Belle Lace Dress",
+      "brand": "Belle",
+      "color": "White",
+      "rating": 4.9,
+      "price": 3999,
+      "image": "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 51,
+      "categoryId": "woman-dress",
+      "name": "Mira Denim Dress",
+      "brand": "Mira",
+      "color": "Blue",
+      "rating": 4.2,
+      "price": 1899,
+      "image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 52,
+      "categoryId": "woman-dress",
+      "name": "Aura Formal Dress",
+      "brand": "Aura",
+      "color": "Gray",
+      "rating": 4.3,
+      "price": 2299,
+      "image": "https://images.unsplash.com/photo-1542060748-10c28b62716f?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 53,
+      "categoryId": "woman-dress",
+      "name": "Luna Summer Dress",
+      "brand": "Luna",
+      "color": "Green",
+      "rating": 4.6,
+      "price": 1699,
+      "image": "https://images.unsplash.com/photo-1551803091-e20673f15770?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 54,
+      "categoryId": "woman-dress",
+      "name": "Belle Cocktail Dress",
+      "brand": "Belle",
+      "color": "Pink",
+      "rating": 4.8,
+      "price": 3299,
+      "image": "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 55,
+      "categoryId": "woman-dress",
+      "name": "Mira Shirt Dress",
+      "brand": "Mira",
+      "color": "Black",
+      "rating": 3.9,
+      "price": 1199,
+      "image": "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 56,
+      "categoryId": "woman-dress",
+      "name": "Aura Pleated Dress",
+      "brand": "Aura",
+      "color": "Purple",
+      "rating": 4.5,
+      "price": 2499,
+      "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 57,
+      "categoryId": "woman-dress",
+      "name": "Luna Midi Dress",
+      "brand": "Luna",
+      "color": "Red",
+      "rating": 4.4,
+      "price": 2099,
+      "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 58,
+      "categoryId": "woman-dress",
+      "name": "Belle Velvet Dress",
+      "brand": "Belle",
+      "color": "Purple",
+      "rating": 4.7,
+      "price": 3799,
+      "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 59,
+      "categoryId": "woman-dress",
+      "name": "Mira A-Line Dress",
+      "brand": "Mira",
+      "color": "Yellow",
+      "rating": 4.1,
+      "price": 1399,
+      "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=900&auto=format&fit=crop"
+    },
+    {
+      "id": 60,
+      "categoryId": "woman-dress",
+      "name": "Aura Festive Dress",
+      "brand": "Aura",
+      "color": "Gold",
+      "rating": 4.9,
+      "price": 4599,
+      "image": "https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?q=80&w=900&auto=format&fit=crop"
+    }
+  ]
+}

@@ -386,6 +386,36 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
+[data-theme="dark"] .team-page,
+[data-theme="dark"] .team-section,
+[data-theme="dark"] .values-section {
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-title h2,
+[data-theme="dark"] .team-info h3,
+[data-theme="dark"] .values-left h2,
+[data-theme="dark"] .value-item {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .section-title p,
+[data-theme="dark"] .team-info p,
+[data-theme="dark"] .values-left p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .team-card,
+[data-theme="dark"] .value-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
+[data-theme="dark"] .section-tag {
+  background: var(--surface-soft);
+}
+
 /* =========================
    ANIMATION
 ========================= */

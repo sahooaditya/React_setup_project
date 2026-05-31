@@ -15,6 +15,11 @@ export const headerRoutes = [
     label: "Service",
     path: "/service",
   },
+  {
+    label: "Product",
+    path: "/product",
+    requiresAuth: true,
+  },
   // {
   //   label: "Login",
   //   path: "/login",

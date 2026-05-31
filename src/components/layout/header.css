@@ -1,367 +1,247 @@
-/* =========================
-   HEADER
-========================= */
 .header {
-  /* FIXED HEADER */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-
   z-index: 1000;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px 34px;
-  /* GLASS EFFECT */
-  background: linear-gradient(135deg, #5345e5, #7c3aed, #9333ea);
+  gap: 22px;
 
+  width: 100%;
+  padding: 14px clamp(16px, 4vw, 42px);
+
+  background: linear-gradient(135deg, rgba(83, 69, 229, 0.92), rgba(124, 58, 237, 0.92));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.18);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-
-  transition: all 0.35s ease;
-
-  animation: headerFade 0.6s ease;
+  transition:
+    padding 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* =========================
-   SCROLL EFFECT
-========================= */
 .header.scrolled {
-  /* MORE DARK + BLUR WHEN SCROLL */
-
-  background: rgba(15, 23, 42, 0.55);
-
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-
-  padding: 20px 30px;
-
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: rgba(15, 23, 42, 0.82);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.28);
 }
 
-/* =========================
-   BODY
-========================= */
 body {
-  margin: 0;
-
-  background: var(--bg);
-  color: var(--text);
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  /* HEADER HEIGHT SPACE */
-  padding-top: 75px;
+  padding-top: 70px;
 }
 
-/* =========================
-   LOGO
-========================= */
 .logo {
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: max-content;
 
   color: white;
   text-decoration: none;
-
-  font-size: 28px;
-  font-weight: 800;
-
-  letter-spacing: 2px;
-
-  overflow: hidden;
-
-  transition: all 0.3s ease;
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 900;
+  letter-spacing: 0;
 }
 
-.logo::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: -4px;
-
-  width: 100%;
-  height: 2px;
-
-  background: linear-gradient(90deg, #60a5fa, #8b5cf6, #ec4899);
-
-  transform: scaleX(0);
-  transform-origin: left;
-
-  transition: transform 0.4s ease;
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 10px 24px rgba(15, 23, 42, 0.18);
+  font-size: 14px;
+  line-height: 1;
 }
 
-.logo:hover::after {
-  transform: scaleX(1);
-}
-
-.logo:hover {
-  transform: scale(1.04);
-}
-
-/* =========================
-   NAV
-========================= */
 .nav {
+  justify-self: end;
   display: flex;
   align-items: center;
-  gap: 28px;
-
-  transition: all 0.3s ease;
+  gap: 8px;
+  min-width: 0;
 }
 
 .nav-item {
   position: relative;
 }
 
-/* LINKS */
 .nav a,
 .menu-label {
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 13px;
+  border-radius: 999px;
 
   color: white;
   text-decoration: none;
-
   font-size: 15px;
-  font-weight: 500;
-
+  font-weight: 700;
+  white-space: nowrap;
   cursor: pointer;
 
-  padding: 6px 0;
-
-  transition: all 0.3s ease;
-}
-
-/* ANIMATED UNDERLINE */
-.nav a::before,
-.menu-label::before {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: -4px;
-
-  width: 0%;
-  height: 2px;
-
-  border-radius: 10px;
-
-  background: linear-gradient(90deg, #60a5fa, #8b5cf6, #ec4899);
-
-  transition: width 0.35s ease;
-}
-
-.nav a:hover::before,
-.menu-label:hover::before {
-  width: 100%;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .nav a:hover,
 .menu-label:hover {
-  opacity: 0.9;
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
 }
 
-/* =========================
-   SUBMENU
-========================= */
 .submenu {
   position: absolute;
-
-  top: 52px;
+  top: calc(100% + 14px);
   left: 0;
-
-  min-width: 210px;
-
-  padding: 14px;
-
-  border-radius: 18px;
-
-  background: rgba(15, 23, 42, 0.75);
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+  z-index: 5;
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  min-width: 210px;
+  padding: 12px;
 
-  animation: dropdownAnimation 0.28s ease;
-
-  overflow: hidden;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 20px 46px rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
-/* SUBMENU ITEMS */
 .submenu a,
 .submenu button {
   width: 100%;
-
+  min-height: 40px;
+  padding: 10px 12px;
   border: none;
-  outline: none;
-
+  border-radius: 10px;
   background: transparent;
-
   color: white;
-
   text-align: left;
-
-  padding: 12px 14px;
-
-  border-radius: 12px;
-
   font-size: 14px;
-  font-weight: 500;
-
+  font-weight: 700;
   cursor: pointer;
-
-  transition: all 0.28s ease;
 }
 
 .submenu a:hover,
 .submenu button:hover {
-  background: rgba(255, 255, 255, 0.1);
-
-  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-/* =========================
-   USER SECTION
-========================= */
-.user-section {
+.user-submenu {
+  display: none;
+  right: 0;
+  left: auto;
+}
+
+.user-submenu.show {
+  display: flex;
+}
+
+.header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-.user-section span {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.user-section button {
-  border: none;
-  outline: none;
-
-  padding: 9px 15px;
-
-  border-radius: 10px;
-
-  background: rgba(255, 255, 255, 0.15);
-
-  color: white;
-
-  backdrop-filter: blur(10px);
-
-  cursor: pointer;
-
-  font-weight: 600;
-
-  transition: all 0.3s ease;
-}
-
-.user-section button:hover {
-  transform: translateY(-2px);
-
-  background: rgba(255, 255, 255, 0.24);
-}
-
-/* =========================
-   THEME BUTTON
-========================= */
-.header > button {
-  width: 44px;
-  height: 44px;
-
-  border: none;
-  outline: none;
-
+.cart-link,
+.theme-toggle,
+.hamburger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%;
-
   background: rgba(255, 255, 255, 0.14);
-
   color: white;
-
-  font-size: 18px;
-
+  font-size: 19px;
   cursor: pointer;
-
+  text-decoration: none;
   backdrop-filter: blur(10px);
-
-  transition: all 0.35s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
-.header > button:hover {
-  transform: rotate(180deg) scale(1.06);
-
+.cart-link:hover,
+.theme-toggle:hover,
+.hamburger:hover {
   background: rgba(255, 255, 255, 0.24);
+  transform: translateY(-2px);
 }
 
-/* =========================
-   HAMBURGER
-========================= */
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
 .hamburger {
   display: none;
-
-  color: white;
-
-  font-size: 30px;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
 }
 
-.hamburger:hover {
-  transform: scale(1.08);
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .header {
-    padding: 14px 25px;
+    grid-template-columns: auto auto;
+  }
+
+  .header-actions {
+    justify-self: end;
   }
 
   .hamburger {
-    display: block;
+    display: inline-flex;
   }
 
   .nav {
     position: absolute;
-
-    top: 78px;
-    left: 0;
-
-    width: 100%;
+    top: calc(100% + 10px);
+    left: 14px;
+    right: 14px;
 
     display: none;
-
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 8px;
+    padding: 14px;
 
-    gap: 18px;
-
-    padding: 25px;
-
-    background: rgba(15, 23, 42, 0.88);
-
+    background: rgba(15, 23, 42, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 22px 52px rgba(15, 23, 42, 0.35);
     backdrop-filter: blur(20px);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-    animation: mobileMenuAnimation 0.35s ease;
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .nav.open {
@@ -371,89 +251,68 @@ body {
   .nav a,
   .menu-label {
     width: 100%;
-    font-size: 16px;
+    justify-content: space-between;
+    border-radius: 12px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.06);
   }
 
-  .submenu {
+  .nav a:hover,
+  .menu-label:hover {
+    transform: none;
+  }
+
+  .submenu,
+  .user-submenu {
     position: static;
-
-    width: 100%;
-
-    margin-top: 10px;
-
-    background: rgba(255, 255, 255, 0.05);
-
-    border-radius: 14px;
-
-    animation: none;
+    display: flex;
+    min-width: 100%;
+    margin-top: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: none;
   }
 
-  .submenu a,
-  .submenu button {
-    width: 100%;
+  .user-submenu {
+    display: none;
   }
 
-  .user-section {
-    width: 100%;
-
-    flex-direction: column;
-    align-items: flex-start;
+  .user-submenu.show {
+    display: flex;
   }
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
-@media (max-width: 480px) {
-  .logo {
-    font-size: 22px;
+@media (max-width: 520px) {
+  body {
+    padding-top: 68px;
   }
 
   .header {
-    padding: 12px 14px;
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .logo {
+    gap: 8px;
+    font-size: 18px;
+  }
+
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .cart-link,
+  .theme-toggle,
+  .hamburger {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
   }
 
   .nav {
-    top: 70px;
-    padding: 18px;
-  }
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-@keyframes dropdownAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(14px) scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes mobileMenuAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(-18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes headerFade {
-  from {
-    opacity: 0;
-    transform: translateY(-18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    left: 10px;
+    right: 10px;
   }
 }

@@ -1,0 +1,155 @@
+.buy-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.buy-header {
+  padding: 70px 8% 40px;
+  background: #111827;
+  color: white;
+}
+
+.buy-header h1 {
+  margin: 0 0 10px;
+  font-size: 44px;
+}
+
+.buy-header p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.buy-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 28px;
+  padding: 40px 8% 90px;
+  align-items: start;
+}
+
+.buy-products {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.buy-item,
+.buy-summary,
+.buy-empty {
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.buy-item {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 18px;
+  padding: 16px;
+  align-items: center;
+}
+
+.buy-item img {
+  width: 140px;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.buy-item span {
+  color: #7c3aed;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.buy-item h2 {
+  margin: 6px 0;
+  color: #111827;
+  font-size: 22px;
+}
+
+.buy-item p {
+  margin: 0 0 10px;
+  color: #64748b;
+}
+
+.buy-item strong,
+.buy-summary strong {
+  color: #111827;
+}
+
+.buy-summary {
+  position: sticky;
+  top: 96px;
+  padding: 24px;
+}
+
+.buy-summary h2 {
+  margin: 0 0 24px;
+  color: #111827;
+}
+
+.buy-summary div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.buy-summary button,
+.buy-empty a {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 24px;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 22px;
+  background: linear-gradient(135deg, #5345e5, #7c3aed, #9333ea);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.buy-empty {
+  margin: 40px 8% 90px;
+  padding: 48px;
+  text-align: center;
+}
+
+.buy-empty h2 {
+  margin: 0;
+  color: #111827;
+}
+
+@media (max-width: 850px) {
+  .buy-layout {
+    grid-template-columns: 1fr;
+    padding: 30px 25px 70px;
+  }
+
+  .buy-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .buy-header {
+    padding: 52px 18px 34px;
+  }
+
+  .buy-layout {
+    padding: 24px 18px 58px;
+  }
+
+  .buy-item {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .buy-item img {
+    width: 96px;
+  }
+}

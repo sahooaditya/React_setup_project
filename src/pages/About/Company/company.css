@@ -341,6 +341,29 @@ body {
   line-height: 1.7;
 }
 
+[data-theme="dark"] .about-company,
+[data-theme="dark"] .services {
+  background: var(--page-bg);
+}
+
+[data-theme="dark"] .about-right h2,
+[data-theme="dark"] .section-title h2,
+[data-theme="dark"] .service-card h3 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .about-right p,
+[data-theme="dark"] .service-card p,
+[data-theme="dark"] .feature-box p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .feature-box,
+[data-theme="dark"] .service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
 /* =========================
    ANIMATION
 ========================= */
