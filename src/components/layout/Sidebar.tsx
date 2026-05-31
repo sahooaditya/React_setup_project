@@ -6,7 +6,12 @@ import { useState } from "react";
 
 import "./sidebar.css";
 
-const Sidebar = () => {
+type SidebarProps = {
+  isOpen?: boolean;
+  onClose?: () => void;
+};
+
+const Sidebar = ({ isOpen = false, onClose }: SidebarProps) => {
   const location = useLocation();
 
   const { user } = useAppSelector((state) => state.auth);
@@ -17,7 +22,7 @@ const Sidebar = () => {
   const menu = user?.role === "admin" ? adminMenu : userMenu;
 
   return (
-    <aside className={`sidebar ${collapsed ? "collapsed" : ""}`}>
+    <aside className={`sidebar ${collapsed ? "collapsed" : ""} ${isOpen ? "mobile-open" : ""}`}>
       {/* TOGGLE BUTTON */}
       <div className="sidebar-toggle">
         <button onClick={() => setCollapsed(!collapsed)}>
@@ -48,6 +53,7 @@ const Sidebar = () => {
             key={item.path}
             to={item.path}
             className={`sidebar-link ${location.pathname === item.path ? "active" : ""}`}
+            onClick={onClose}
           >
             <span className="sidebar-icon">{item.icon}</span>
 

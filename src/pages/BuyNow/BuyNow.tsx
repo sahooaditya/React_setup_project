@@ -1,5 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import {
+  FiArrowRight,
+  FiCreditCard,
+  FiPackage,
+  FiShield,
+  FiShoppingBag,
+  FiTruck,
+} from "react-icons/fi";
 import "./buy-now.css";
 
 const loadRazorpayScript = () => {
@@ -31,6 +39,7 @@ const BuyNow = () => {
     : null;
   const items = directProduct ? [{ product: directProduct, quantity: 1 }] : cartItems;
   const total = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+  const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const apiBaseUrl = process.env.REACT_APP_PAYMENT_API_URL || "http://localhost:5000";
 
   const getRazorpayConfig = async () => {
@@ -154,44 +163,101 @@ const BuyNow = () => {
   return (
     <main className="buy-page">
       <section className="buy-header">
-        <h1>Buy Now</h1>
-        <p>Review your products before placing the order</p>
+        <div className="buy-header-content">
+          <span className="buy-kicker">
+            <FiCreditCard /> Secure Checkout
+          </span>
+          <h1>Review and place your order.</h1>
+          <p>
+            Confirm your products, check the total, and continue to a secure Razorpay payment.
+          </p>
+        </div>
       </section>
 
       {items.length === 0 ? (
         <section className="buy-empty">
+          <div className="buy-empty-icon">
+            <FiShoppingBag />
+          </div>
           <h2>No products selected</h2>
-          <Link to="/product">Browse Products</Link>
+          <p>Add products to your cart or choose Buy Now from a product page.</p>
+          <Link to="/product">
+            Browse Products <FiArrowRight />
+          </Link>
         </section>
       ) : (
         <section className="buy-layout">
           <div className="buy-products">
+            <div className="checkout-steps">
+              <div>
+                <FiPackage />
+                <span>Review</span>
+              </div>
+              <div>
+                <FiTruck />
+                <span>Free delivery</span>
+              </div>
+              <div>
+                <FiShield />
+                <span>Secure payment</span>
+              </div>
+            </div>
+
             {items.map((item) => (
               <article className="buy-item" key={item.product.id}>
-                <img src={item.product.image} alt={item.product.name} />
-                <div>
-                  <span>{item.product.brand}</span>
+                <div className="buy-image-wrap">
+                  <img src={item.product.image} alt={item.product.name} />
+                </div>
+
+                <div className="buy-info">
+                  <span className="buy-brand">{item.product.brand}</span>
                   <h2>{item.product.name}</h2>
-                  <p>
-                    {item.product.color} | Qty {item.quantity}
-                  </p>
-                  <strong>Rs. {item.product.price * item.quantity}</strong>
+
+                  <div className="buy-meta">
+                    <span>{item.product.color}</span>
+                    <span>Qty {item.quantity}</span>
+                  </div>
+
+                  <div className="buy-price-row">
+                    <span>Item total</span>
+                    <strong>Rs. {item.product.price * item.quantity}</strong>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
 
           <aside className="buy-summary">
+            <span className="summary-kicker">Payment Summary</span>
             <h2>Payment Summary</h2>
-            <div>
+
+            <div className="summary-row">
+              <span>Items</span>
+              <strong>{totalItems}</strong>
+            </div>
+
+            <div className="summary-row">
               <span>Subtotal</span>
               <strong>Rs. {total}</strong>
             </div>
-            <div>
+
+            <div className="summary-row">
               <span>Delivery</span>
               <strong>Free</strong>
             </div>
-            <button onClick={handlePayment}>Place Order</button>
+
+            <div className="summary-total">
+              <span>Total</span>
+              <strong>Rs. {total}</strong>
+            </div>
+
+            <button onClick={handlePayment}>
+              Place Order <FiArrowRight />
+            </button>
+
+            <p className="payment-note">
+              <FiShield /> Payments are processed through Razorpay checkout.
+            </p>
           </aside>
         </section>
       )}
