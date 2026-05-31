@@ -55,8 +55,7 @@ const Header = () => {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <Link to="/" className="logo" onClick={closeMenu}>
-        <span className="logo-mark">MC</span>
-        <span>MyCompany</span>
+        <img src="/aditya_logo.png" alt="Aditya logo" className="logo-image" />
       </Link>
 
       <nav className={`nav ${menuOpen ? "open" : ""}`}>
